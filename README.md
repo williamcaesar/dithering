@@ -1,5 +1,5 @@
 # Dithering
-     - Básico
-     - Aleatório
-     - Periódico
-     - Aperiódico(Floyd-Steimberg)
+     - Basic
+     - Aleatory
+     - Periodic
+     - Aperidic(Floyd-Steimberg)
