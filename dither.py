@@ -118,13 +118,6 @@ if (__name__ == '__main__'):
         5: 'aperiodic'
         }
     image = cv2.imread('images/sapo.png', cv2.IMREAD_GRAYSCALE)
-    options = {
-        1: 'basic',
-        2: 'periodic',
-        3: 'aleatory',
-        4: 'periodic',
-        5: 'aperiodic'
-        }
     print('Dithering ')
     for key in options:
         print(key, options[key])
