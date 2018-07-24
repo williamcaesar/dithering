@@ -5,23 +5,23 @@ import cv2
 import random
 
 
-def basic(image, lessgreater=[0, 255], limiar=127):
+def basic(image, limits=[0, 255], limiar=127):
     """Apply basic dithering."""
     if len(image.shape) == 2:
         result = numpy.zeros((image.shape[0], image.shape[1]), numpy.uint8)
         for row in range(1, image.shape[0]):
             for column in range(1, image.shape[1]):
-                result[row, column] = lessgreater[0] \
-                    if image[row, column] <= limiar else lessgreater[1]
+                result[row, column] = limits[0] \
+                    if image[row, column] <= limiar else limits[1]
     else:
         result = numpy.zeros(
             (image.shape[0], image.shape[1], image.shape[2]), numpy.uint8)
         for row in range(1, image.shape[0]):
             for column in range(1, image.shape[1]):
                 for channel in range(0, image.shape[2]):
-                    result[row, column, channel] = lessgreater[0] \
+                    result[row, column, channel] = limits[0] \
                         if image[row, column, channel] <= limiar \
-                        else lessgreater[1]
+                        else limits[1]
     return result
 
 
