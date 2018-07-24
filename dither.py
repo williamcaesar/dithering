@@ -110,9 +110,32 @@ def show(image):
 
 
 if (__name__ == '__main__'):
+    options = {
+        1: 'basic',
+        2: 'periodic',
+        3: 'aleatory',
+        4: 'periodic',
+        5: 'aperiodic'
+        }
     image = cv2.imread('images/sapo.png', cv2.IMREAD_GRAYSCALE)
-    show(periodic(image))
-    show(basic(image))
-    show(aleatory(image))
-    show(periodic(image))
-    show(aperiodic(image))
+    options = {
+        1: 'basic',
+        2: 'periodic',
+        3: 'aleatory',
+        4: 'periodic',
+        5: 'aperiodic'
+        }
+    print('Dithering ')
+    for key in options:
+        print(key, options[key])
+    choice = input('put the number of the algorithm:\n ')
+    if choice is '1':
+        show(basic(image))
+    elif choice is '2':
+        show(periodic(image))
+    elif choice is '3':
+        show(aleatory(image))
+    elif choice is '4':
+        show(aperiodic(image))
+    else:
+        print('Invalid option!')
